@@ -67,7 +67,6 @@ def run_test():
 
 print("Runing data light test...")
 run_test()
-time.sleep(60)
 
 print("Runing data light data ...")
 while True:
@@ -95,7 +94,7 @@ while True:
         date_series = pd.read_csv("D:\\t2m-project\\ami-data\\ami_eod_data\\VNINDEX.csv").iloc[-1]
         date_series["date"] = pd.to_datetime(date_series["date"].astype(str), format="%y%m%d")
 
-        current_path = os.getcwd()
+        current_path = (os.path.dirname(os.getcwd()))
         run_notebook(current_path)
 
         end_time = time.time()

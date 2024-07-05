@@ -46,7 +46,7 @@ try:
     # Thêm một MessageHandler duy nhất
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_messages))
 
-    print("Bot đang được chạy ...")
+    print("Running Telegram Bot...")
     app.run_polling()
 
 except Exception as e:
