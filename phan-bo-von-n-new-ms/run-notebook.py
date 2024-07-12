@@ -1,12 +1,13 @@
-import nbformat
-from nbconvert.preprocessors import ExecutePreprocessor
-import os
-import datetime as dt
-from datetime import datetime
-import pandas as pd
-import time
 import asyncio
+import datetime as dt
+import os
 import platform
+import time
+from datetime import datetime
+
+import nbformat
+import pandas as pd
+from nbconvert.preprocessors import ExecutePreprocessor
 
 # Set environment variables for debugger
 os.environ["PYDEVD_DISABLE_FILE_VALIDATION"] = "1"
@@ -35,7 +36,7 @@ try:
     end_time = time.time()
 
     print(
-        f"Completed in: {int(end_time - start_time)}s"
+        f"Xử lý dữ liệu thành công, thời gian: {int(end_time - start_time)}s"
     )
     time.sleep(60)
 
