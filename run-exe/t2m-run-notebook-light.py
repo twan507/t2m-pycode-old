@@ -92,7 +92,7 @@ while True:
             continue
         elif run_state == 4:
             print("Ngoài thời gian giao dịch: ",dt.datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
-            time.sleep(43000)
+            time.sleep(42000)
             continue
 
         date_series = pd.read_csv("D:\\t2m-project\\ami-data\\ami_eod_data\\VNINDEX.csv").iloc[-1]
