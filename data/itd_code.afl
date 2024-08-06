@@ -8,18 +8,19 @@ AddColumn(DateTime(), "date", formatDateTime);
 
 Filter = Close;
 
-fh = fopen( "D:\\t2m_folder\\ami_itd_data\\"+Name()+".csv", "w" );
+fh = fopen( "D:\\t2m-project\\ami-data\\ami_itd_data\\"+Name()+".csv", "w" );
 
 if( fh )
 {
   fputs("stock,date,open,high,low,close,volume,option,cap\n", fh );
-  date_num = DateNum();
+  date_num = DateTime();
   
   for( i = 1; i < BarCount; i++ )
   {
-   Line = Name() +
-   StrFormat(",%06.0f,%g,%g,%g,%g,%g,%g,%g\n",
-   date_num[ i ] % 1000000,
+   Line = 
+   Name() + "," +
+   DateTimeFormat("%y%m%d %H%M%S", date_num[ i ]) +
+   StrFormat(",%g,%g,%g,%g,%g,%g,%g\n",
    O[ i ],
    H[ i ],
    L[ i ],
